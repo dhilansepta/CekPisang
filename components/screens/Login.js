@@ -26,6 +26,7 @@ function Welcome({ navigation }) {
         placeholderTextColor={COLOURS.grey}
         value={email}
         onChangeText={(text) => setEmail(text)}
+        marginTop={verticalScale(50)}
         />
 
         <TextInput
@@ -37,7 +38,25 @@ function Welcome({ navigation }) {
         onChangeText={(text) => setPassword(text)}
         />
 
+        <TouchableOpacity>
+          <View style={styles.Button} backgroundColor={COLOURS.primary} marginTop={verticalScale(20)}>
+            <Text style={styles.text}>Masuk</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={styles.Button} backgroundColor={COLOURS.ternary}>
+            <Text style={styles.text}>Scan Unit tanpa akun</Text>
+          </View>
+        </TouchableOpacity>
         
+        <TouchableOpacity>
+          <Text style={styles.textButton} marginTop={verticalScale(10)}>Lupa Password?</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity>
+          <Text style={styles.textButton} marginTop={verticalScale(5)}>Daftar Akun Baru</Text>
+        </TouchableOpacity>
     </View>
   );
 }
@@ -47,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor:COLOURS.white
+    backgroundColor:COLOURS.white,
   },
   Header: {
     fontSize:moderateScale(40),
@@ -63,18 +82,23 @@ const styles = StyleSheet.create({
     padding: moderateScale(8),
     margin: moderateScale(10),
   },
-  loginButton: {
-    width: "70%",
-    height: 50,
+  Button: {
+    width: horizontalScale(270),
+    height: verticalScale(45),
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: COLOURS.backgroundLight,
-    borderRadius: 40,
-    margin: 20,
+    borderRadius: moderateScale(40),
+    margin: moderateScale(5),
+  },
+  text:{
+    color:COLOURS.white,
+    textDecorationLine:"underline",
+    fontWeight:"500",
   },
   textButton: {
-    color: COLOURS.black,
-    fontWeight: "bold",
+    color: COLOURS.secondary,
+    textDecorationLine:"underline",
+    fontWeight: "500",
   },
 });
 
