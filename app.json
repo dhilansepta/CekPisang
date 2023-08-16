@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "CekPisang",
+    "slug": "CekPisang",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/LogoWhite.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#33ACC1"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/LogoWhite.png",
+        "backgroundColor": "#33ACC1"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
