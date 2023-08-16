@@ -10,7 +10,7 @@ import {
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
 
-function Welcome({ navigation }) {
+function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -50,7 +50,7 @@ function Welcome({ navigation }) {
           </View>
         </TouchableOpacity>
         
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("LupaPassword")}>
           <Text style={styles.textButton} marginTop={verticalScale(10)}>Lupa Password?</Text>
         </TouchableOpacity>
         
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Welcome;
+export default Login;
