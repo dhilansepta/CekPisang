@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 
-export function UnitItem({ unitId, unitDesc, unitTimestamp }) {
+export default function UnitItem({ unitId, unitDesc, unitTimestamp }) {
   
   return (
     <View style={styles.UnitWrapper}>

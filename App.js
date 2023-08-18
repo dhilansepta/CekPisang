@@ -7,7 +7,6 @@ import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
 import HomeProfile from "./components/screens/HomeProfile";
 import EditProfile from "./components/screens/EditProfile";
-import Welcome from "./components/screens/Login";
 import HomeUnit from "./components/screens/HomeUnit";
 
 // SplashScreen.preventAutoHideAsync();
@@ -23,12 +22,11 @@ const App = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Edit Profile" component={EditProfile} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="LupaPassword" component={LupaPassword} />
-        <Stack.Screen name="Profile" component={HomeProfile} />
-        <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="HomeUnit" component={HomeUnit} />
+        <Stack.Screen name="HomeProfile" component={HomeProfile} />
+        <Stack.Screen name="Edit Profile" component={EditProfile} />
+        <Stack.Screen name="LupaPassword" component={LupaPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );
