@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as SplashScreen from 'expo-splash-screen';
 import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
+import Profile from "./components/screens/Profile";
 
 SplashScreen.preventAutoHideAsync();
 setTimeout(SplashScreen.hideAsync, 1000);
@@ -19,6 +20,7 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
       </Stack.Navigator>
