@@ -10,13 +10,13 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 
-export function UnitItem({ unitId='1306231c07230069tuA6', unitDesc='Pisang Ambon, 34 Kg, 1221665', unitTimestamp='Mon Jul 24 2023 09:50:05 GMT+0700 (Western Indonesia Time)' }) {
+export function UnitItem({ unitId, unitDesc, unitTimestamp }) {
   
   return (
     <View style={styles.UnitWrapper}>
       <Text style={{fontSize:16, lineHeight:16}}><Text style={{fontWeight:'bold'}}>Kode Unit : </Text>{unitId}</Text>
-      <Text style={{fontSize:12, lineHeight:12}}>{unitDesc}</Text>
-      <View style={styles.dateArea}><Text>Tanggal : </Text><Text style={{flex:1}}>{unitTimestamp}</Text></View>
+      <Text style={{fontSize:12, lineHeight:13}} numberOfLines={1} ellipsizeMode="tail">{unitDesc}</Text>
+      <View style={styles.dateArea}><Text style={styles.sizeSmall}>Tanggal : </Text><Text style={styles.timeStamp}>{unitTimestamp}</Text></View>
     </View>
 
     
@@ -36,7 +36,16 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     fontSize:12,
-    lineHeight:12,
+    lineHeight:13,
     width:'100%',
+  },
+  sizeSmall: {
+    fontSize:12,
+    lineHeight:13
+  },
+  timeStamp: {
+    fontSize:12,
+    lineHeight:13,
+    flex:1
   }
 });
