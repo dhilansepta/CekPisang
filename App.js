@@ -6,6 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
 import Profile from "./components/screens/Profile";
+import EditProfile from "./components/screens/EditProfile";
 
 SplashScreen.preventAutoHideAsync();
 setTimeout(SplashScreen.hideAsync, 1000);
@@ -20,9 +21,10 @@ const App = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Edit Profile" component={EditProfile} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
