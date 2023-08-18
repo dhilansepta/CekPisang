@@ -10,7 +10,8 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
-import { UnitItem } from '../UnitList/UnitItem'
+import UnitItem  from '../UnitList/UnitItem'
+import BottomBar from "../Navigation/BottomBar";
 
 const get_sample_unit = (amount = 9) => {
   let date = new Date();
@@ -65,6 +66,8 @@ export default function HomeUnit({ navigation }) {
             {unitItems}
           </ScrollView>
         </View>
+
+        <BottomBar active={'unit'} navigation={navigation}/>
     </View>
   );
 }

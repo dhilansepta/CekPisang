@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  FlatList,
   Image,
   StyleSheet,
   View,
@@ -11,6 +10,7 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
+import BottomBar from "../Navigation/BottomBar";
 
 function HomeProfile({ navigation }) {
   const [data1, setData1] = useState([]);
@@ -29,7 +29,7 @@ function HomeProfile({ navigation }) {
 
   for(let i=0; i < pribadi1.length; i++){
     profilefieldpribadi.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {pribadi1[i]}
         </Text>
@@ -45,7 +45,7 @@ function HomeProfile({ navigation }) {
 
   for(let i=0; i < pribadi1.length; i++){
     profilefieldperusahaan.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {perusahaan1[i]}
         </Text>
@@ -63,7 +63,7 @@ function HomeProfile({ navigation }) {
     <View style={styles.background}>
         <View style={styles.topBar}>
           <View style={styles.topBarHolder}>
-            <TouchableOpacity style={styles.settingButton} onPress={() => navigation.navigate("Login")}>
+            <TouchableOpacity style={styles.settingButton}>
               <Image source={require("../storage/images/SettingWhite.png")}/>
             </TouchableOpacity>
           </View>
@@ -105,7 +105,9 @@ function HomeProfile({ navigation }) {
           </View>
         </ScrollView>
 
-        <View style={styles.bottomBarholder}>
+        <BottomBar active={'profile'} navigation={navigation}/>
+
+        {/* <View style={styles.bottomBarholder}>
             <View style={styles.bottomBar}>
                 <View style={styles.buttonGroup}>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
@@ -123,7 +125,7 @@ function HomeProfile({ navigation }) {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </View> */}
     </View>
   );
 }
