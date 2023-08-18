@@ -12,7 +12,7 @@ import {
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
 
-function Profile({ navigation }) {
+function HomeProfile({ navigation }) {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
@@ -228,4 +228,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Profile;
+export default HomeProfile;
