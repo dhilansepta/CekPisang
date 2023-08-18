@@ -10,11 +10,27 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
-import { Dimensions } from 'react-native'
 import { UnitItem } from '../UnitList/UnitItem'
+
+const get_sample_unit = (amount = 9) => {
+  let date = new Date();
+  const temp = [];
+  for(let i = 0; i < amount; i++){
+    let id = String((i+1)%10)+'306231c07230069tuA6';
+    let desc = 'Pisang ke-'+String(i+1)+', '+(i+1)*34+'Kg, 12216'+Math.floor(i/10)+(i%10);
+    let timestamp = date.toString() + ' (Western Indonesian Time)';
+    temp.push(
+      <UnitItem key={i} unitId={id} unitDesc={desc} unitTimestamp={timestamp}/>
+    )
+  }
+  return temp;
+}
 
 export default function HomeUnit({ navigation }) {
   const [search, setSearch] = useState("");
+
+  const unitItems = get_sample_unit();
+
 
     return (
     <View style={styles.MainWrapper}>
@@ -32,12 +48,12 @@ export default function HomeUnit({ navigation }) {
           <View style={styles.TopBtnSection}>
             <TouchableOpacity style={styles.TopBtn}>
               <View style={styles.TopBtnView}>
-                <Image source={require('../storage/images/tambah_unit_baru.png')} style={styles.TopBtnImg}/>
+                <Image source={require('../storage/images/scan_unit_baru.png')} style={styles.TopBtnImg}/>
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.TopBtn}>
               <View style={styles.TopBtnView}>
-                <Image source={require('../storage/images/scan_unit_baru.png')} style={styles.TopBtnImg}/>
+                <Image source={require('../storage/images/tambah_unit_baru.png')} style={styles.TopBtnImg}/>
               </View>
               
             </TouchableOpacity>
@@ -46,15 +62,7 @@ export default function HomeUnit({ navigation }) {
 
         <View style={styles.MainContent}>
           <ScrollView style={styles.UnitList}>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
-            <UnitItem/>
+            {unitItems}
           </ScrollView>
         </View>
     </View>
