@@ -7,9 +7,11 @@ import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
 import Profile from "./components/screens/Profile";
 import EditProfile from "./components/screens/EditProfile";
+import Welcome from "./components/screens/Login";
+import Unit from "./components/screens/HomeUnit";
 
-SplashScreen.preventAutoHideAsync();
-setTimeout(SplashScreen.hideAsync, 1000);
+// SplashScreen.preventAutoHideAsync();
+// setTimeout(SplashScreen.hideAsync, 1000);
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -25,6 +27,8 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="HomeUnit" component={Unit} />
       </Stack.Navigator>
     </NavigationContainer>
   );
