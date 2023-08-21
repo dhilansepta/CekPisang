@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as SplashScreen from 'expo-splash-screen';
 import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
-import Profile from "./components/screens/Profile";
+import HomeProfile from "./components/screens/HomeProfile";
 import EditProfile from "./components/screens/EditProfile";
 import ChangePassword from "./components/screens/ChangePassword";
 import Daftar from "./components/screens/Daftar";
@@ -23,12 +23,12 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Home Profile" component={HomeProfile} />
         <Stack.Screen name="Daftar" component={Daftar} />
         <Stack.Screen name="Change Password" component={ChangePassword} />
         <Stack.Screen name="Edit Profile" component={EditProfile} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
-        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
   underline:{
     borderBottomWidth:1,
     paddingBottom:verticalScale(3),
-    backgroundColor:COLOURS.accent,
     justifyContent:"space-between",
     alignItems:"center",
     flexDirection:"row",
