@@ -10,8 +10,8 @@ import EditProfile from "./components/screens/EditProfile";
 import ChangePassword from "./components/screens/ChangePassword";
 import Daftar from "./components/screens/Daftar";
 
-SplashScreen.preventAutoHideAsync();
-setTimeout(SplashScreen.hideAsync, 1000);
+// SplashScreen.preventAutoHideAsync();
+// setTimeout(SplashScreen.hideAsync, 1000);
 
 const App = () => {
   const Stack = createNativeStackNavigator();
