@@ -7,6 +7,8 @@ import Login from "./components/screens/Login";
 import LupaPassword from "./components/screens/LupaPassword";
 import Profile from "./components/screens/Profile";
 import EditProfile from "./components/screens/EditProfile";
+import ChangePassword from "./components/screens/ChangePassword";
+import Daftar from "./components/screens/Daftar";
 
 SplashScreen.preventAutoHideAsync();
 setTimeout(SplashScreen.hideAsync, 1000);
@@ -21,6 +23,8 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Daftar" component={Daftar} />
+        <Stack.Screen name="Change Password" component={ChangePassword} />
         <Stack.Screen name="Edit Profile" component={EditProfile} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />

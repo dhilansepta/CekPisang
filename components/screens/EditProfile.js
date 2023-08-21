@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     width:verticalScale(375),
   },
   datasHolder:{
-    width:verticalScale(326),
+    width:horizontalScale(326),
     marginTop:verticalScale(10),
   },
   datas:{
