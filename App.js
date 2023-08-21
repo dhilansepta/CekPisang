@@ -9,6 +9,7 @@ import HomeProfile from "./components/screens/HomeProfile";
 import EditProfile from "./components/screens/EditProfile";
 import ChangePassword from "./components/screens/ChangePassword";
 import Daftar from "./components/screens/Daftar";
+import HomeUnit from "./components/screens/HomeUnit";
 
 // SplashScreen.preventAutoHideAsync();
 // setTimeout(SplashScreen.hideAsync, 1000);
@@ -23,6 +24,7 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Home Unit" component={HomeUnit} />
         <Stack.Screen name="Home Profile" component={HomeProfile} />
         <Stack.Screen name="Daftar" component={Daftar} />
         <Stack.Screen name="Change Password" component={ChangePassword} />
