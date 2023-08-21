@@ -11,7 +11,7 @@ import {
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
 import UnitItem  from '../UnitList/UnitItem'
-import BottomBar from "../Navigation/BottomBar";
+import BottomBar from "../NavigationBar/BottomBar";
 
 const get_sample_unit = (amount = 9) => {
   let date = new Date();

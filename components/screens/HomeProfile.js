@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
-import BottomBar from "../Navigation/BottomBar";
+import BottomBar from "../NavigationBar/BottomBar";
 
 function HomeProfile({ navigation }) {
   const [data1, setData1] = useState([]);
