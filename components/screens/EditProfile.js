@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
+import TopBar from "../NavigationBar/TopBar";
 
 function EditProfile({ navigation }) {
 
@@ -31,7 +32,7 @@ function EditProfile({ navigation }) {
         editbtn = ""
     }
     profilefieldpribadi.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {pribadi1[i]}
         </Text>
@@ -48,7 +49,7 @@ function EditProfile({ navigation }) {
 
   for(let i=0; i < perusahaan1.length; i++){
     profilefieldperusahaan.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {perusahaan1[i]}
         </Text>
@@ -67,7 +68,7 @@ function EditProfile({ navigation }) {
 
     return (
     <View style={styles.background}>
-        <View style={styles.topBar}>
+        {/* <View style={styles.topBar}>
           <View style={styles.topBarHolder}>
             <TouchableOpacity style={styles.settingButton} onPress={() => navigation.navigate("Login")}>
               <Image source={require("../storage/images/CrossButtonWhite.png")}/>
@@ -77,7 +78,8 @@ function EditProfile({ navigation }) {
               <Image source={require("../storage/images/TopBar_btn_check.png")}/>
             </TouchableOpacity>
           </View>
-        </View>
+        </View> */}
+        <TopBar navigation={navigation} rightButtonData={['check', null]}/>
         
         <ScrollView>
           <View style={styles.body}>
@@ -222,7 +224,7 @@ const styles = StyleSheet.create({
     width:verticalScale(375),
   },
   datasHolder:{
-    width:verticalScale(326),
+    width:horizontalScale(326),
     marginTop:verticalScale(10),
   },
   datas:{

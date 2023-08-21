@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
+import TopBar from "../NavigationBar/TopBar";
 import BottomBar from "../NavigationBar/BottomBar";
 
 function HomeProfile({ navigation }) {
@@ -61,13 +62,14 @@ function HomeProfile({ navigation }) {
 
     return (
     <View style={styles.background}>
-        <View style={styles.topBar}>
+        {/* <View style={styles.topBar}>
           <View style={styles.topBarHolder}>
             <TouchableOpacity style={styles.settingButton}>
               <Image source={require("../storage/images/TopBar_btn_setting.png")}/>
             </TouchableOpacity>
           </View>
-        </View>
+        </View> */}
+        <TopBar navigation={navigation} leftButtonData={[false]} rightButtonData={['setting',()=>navigation.navigate('Edit Profile')]} />
         
         <ScrollView>
           <View style={styles.body}>
