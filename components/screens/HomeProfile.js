@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  FlatList,
   Image,
   StyleSheet,
   View,
@@ -11,8 +10,9 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
+import BottomBar from "../NavigationBar/BottomBar";
 
-function Profile({ navigation }) {
+function HomeProfile({ navigation }) {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
@@ -29,7 +29,7 @@ function Profile({ navigation }) {
 
   for(let i=0; i < pribadi1.length; i++){
     profilefieldpribadi.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {pribadi1[i]}
         </Text>
@@ -45,7 +45,7 @@ function Profile({ navigation }) {
 
   for(let i=0; i < pribadi1.length; i++){
     profilefieldperusahaan.push(
-      <View style={styles.datas}>
+      <View key={i} style={styles.datas}>
         <Text style={styles.teks2}>
           {perusahaan1[i]}
         </Text>
@@ -63,8 +63,8 @@ function Profile({ navigation }) {
     <View style={styles.background}>
         <View style={styles.topBar}>
           <View style={styles.topBarHolder}>
-            <TouchableOpacity style={styles.settingButton} onPress={() => navigation.navigate("Login")}>
-              <Image source={require("../storage/images/SettingWhite.png")}/>
+            <TouchableOpacity style={styles.settingButton}>
+              <Image source={require("../storage/images/TopBar_btn_setting.png")}/>
             </TouchableOpacity>
           </View>
         </View>
@@ -105,7 +105,9 @@ function Profile({ navigation }) {
           </View>
         </ScrollView>
 
-        <View style={styles.bottomBarholder}>
+        <BottomBar active={'profile'} navigation={navigation}/>
+
+        {/* <View style={styles.bottomBarholder}>
             <View style={styles.bottomBar}>
                 <View style={styles.buttonGroup}>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
@@ -123,7 +125,7 @@ function Profile({ navigation }) {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
+        </View> */}
     </View>
   );
 }
@@ -228,4 +230,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Profile;
+export default HomeProfile;
