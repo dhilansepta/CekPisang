@@ -96,5 +96,6 @@ const styles = StyleSheet.create({
   QRImage:{
     height:verticalScale(90),
     width:horizontalScale(90),
+    resizeMode:'contain'
   },
 });

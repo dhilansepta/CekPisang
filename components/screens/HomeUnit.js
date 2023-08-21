@@ -149,13 +149,15 @@ const styles = StyleSheet.create({
     width:'100%',
     flex:1,
     borderRadius:24,
-    overflow:'scroll',
+    overflow:'hidden',
+    marginBottom:-44,
+    paddingBottom:14
   },
 
   UnitList: {
     backgroundColor:COLOURS.white,
     paddingTop:6,
-    height:'100%'
+    height:'100%',
   }
 
 });
