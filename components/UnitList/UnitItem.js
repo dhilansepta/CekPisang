@@ -10,14 +10,21 @@ import {
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 
-export default function UnitItem({ unitId, unitDesc, unitTimestamp }) {
+export default function UnitItem({ navigation, unitId, unitDesc, unitTimestamp }) {
   
+  const onPress = () => {
+    navigation.navigate('DetailUnit')
+  }
+
   return (
-    <View style={styles.UnitWrapper}>
-      <Text style={{fontSize:16, lineHeight:16}}><Text style={{fontWeight:'bold'}}>Kode Unit : </Text>{unitId}</Text>
-      <Text style={{fontSize:12, lineHeight:13}} numberOfLines={1} ellipsizeMode="tail">{unitDesc}</Text>
-      <View style={styles.dateArea}><Text style={styles.sizeSmall}>Tanggal : </Text><Text style={styles.timeStamp}>{unitTimestamp}</Text></View>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.UnitWrapper}>
+        <Text style={{fontSize:16, lineHeight:16}}><Text style={{fontWeight:'bold'}}>Kode Unit : </Text>{unitId}</Text>
+        <Text style={{fontSize:12, lineHeight:13}} numberOfLines={1} ellipsizeMode="tail">{unitDesc}</Text>
+        <View style={styles.dateArea}><Text style={styles.sizeSmall}>Tanggal : </Text><Text style={styles.timeStamp}>{unitTimestamp}</Text></View>
+      </View>
+    </TouchableOpacity>
+    
 
     
   );
