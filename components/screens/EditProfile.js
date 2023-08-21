@@ -74,7 +74,7 @@ function EditProfile({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.settingButton} onPress={() => navigation.navigate("Login")}>
-              <Image source={require("../storage/images/CheckButtonWhite.png")}/>
+              <Image source={require("../storage/images/TopBar_btn_check.png")}/>
             </TouchableOpacity>
           </View>
         </View>

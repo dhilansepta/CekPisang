@@ -64,7 +64,7 @@ function HomeProfile({ navigation }) {
         <View style={styles.topBar}>
           <View style={styles.topBarHolder}>
             <TouchableOpacity style={styles.settingButton}>
-              <Image source={require("../storage/images/SettingWhite.png")}/>
+              <Image source={require("../storage/images/TopBar_btn_setting.png")}/>
             </TouchableOpacity>
           </View>
         </View>
