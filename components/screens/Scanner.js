@@ -27,7 +27,7 @@ function Scanner({ navigation }) {
     
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
-        alert(`Berhasil Scan QR!`);
+        alert(`Berhasil Scan QR! \n` + `Type: ${type}\n` + `Data: ${data}`);
     };
     
     if (hasPermission === null) {
@@ -41,7 +41,7 @@ function Scanner({ navigation }) {
     return (
     <View style={styles.background}>
       <View style={styles.scannerframe}>
-        <Image source={require("../storage/images/ScanningFrame.png")}/>
+        <Image source={require("../storage/images/ScanningFrame.png")} style={{width:'100%', height:'100%'}}/>
       </View>
 
       <BarCodeScanner
@@ -55,7 +55,10 @@ function Scanner({ navigation }) {
           Silahkan Pindai QR Code Disini
         </Text>
         <TouchableOpacity
-        onPress={() => setScanned(false)}
+        onPress={() => {
+          setScanned(false);
+          navigation.goBack();
+        }}
         >
           <View style={styles.btn}>
             <Text style={styles.btnteks}>
@@ -97,6 +100,8 @@ const styles = StyleSheet.create({
   scannerframe:{
     zIndex:1,
     position:"absolute",
+    width:'100%',
+    height:'100%',
   },
   teksnbtnframe:{
     zIndex:2,
