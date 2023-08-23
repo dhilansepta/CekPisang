@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
   TouchableHighlight,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import { COLOURS } from "../storage/Colour";
 
@@ -47,7 +47,7 @@ function TopBar({ navigation, title='', leftButtonData=['back', false], rightBut
                     break;
                 case 'back':
                     btnImgSrc = require('../storage/images/TopBar_btn_back.png');
-                    buttonAction = () => navigation.goBack();
+                    buttonAction = buttonAction ? buttonAction : () => navigation.goBack();
                     break;
                 default:
                     throw('Invalid Topbar button type');
