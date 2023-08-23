@@ -13,25 +13,26 @@ import { horizontalScale, moderateScale, verticalScale } from '../storage/Metric
 import UnitItem  from '../UnitList/UnitItem'
 import BottomBar from "../NavigationBar/BottomBar";
 
-const get_sample_unit = (amount = 9) => {
-  let date = new Date();
-  const temp = [];
-  for(let i = 0; i < amount; i++){
-    let id = String((i+1)%10)+'306231c07230069tuA6';
-    let desc = 'Pisang ke-'+String(i+1)+', '+(i+1)*34+'Kg, 12216'+Math.floor(i/10)+(i%10);
-    let timestamp = date.toString() + ' (Western Indonesian Time)';
-    temp.push(
-      <UnitItem key={i} unitId={id} unitDesc={desc} unitTimestamp={timestamp}/>
-    )
-  }
-  return temp;
-}
+
 
 export default function HomeUnit({ navigation }) {
   const [search, setSearch] = useState("");
 
-  const unitItems = get_sample_unit();
+  const get_sample_unit = (amount = 9) => {
+    let date = new Date();
+    const temp = [];
+    for(let i = 0; i < amount; i++){
+      let id = String((i+1)%10)+'306231c07230069tuA6';
+      let desc = 'Pisang ke-'+String(i+1)+', '+(i+1)*34+'Kg, 12216'+Math.floor(i/10)+(i%10);
+      let timestamp = date.toString() + ' (Western Indonesian Time)';
+      temp.push(
+        <UnitItem navigation={navigation} key={i} unitId={id} unitDesc={desc} unitTimestamp={timestamp}/>
+      )
+    }
+    return temp;
+  }
 
+  const unitItems = get_sample_unit();
 
     return (
     <View style={styles.MainWrapper}>
