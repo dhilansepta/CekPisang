@@ -28,6 +28,7 @@ function Scanner({ navigation }) {
     const handleBarCodeScanned = ({ type, data }) => {
         setScanned(true);
         alert(`Berhasil Scan QR! \n` + `Type: ${type}\n` + `Data: ${data}`);
+        navigation.navigate("DetailUnit");
     };
     
     if (hasPermission === null) {
