@@ -32,7 +32,7 @@ export default function BottomBar({ navigation, active }) {
                     </TouchableOpacity>
 
                     <View style={styles.QRWrapper}>
-                        <TouchableOpacity style={styles.QRbutton}>
+                        <TouchableOpacity style={styles.QRbutton} onPress={() => navigation.navigate('Scanner')}>
                             <Image source={require("../storage/images/ScanQRLogo.png")} style={styles.QRImage}/>
                         </TouchableOpacity>
                     </View>
