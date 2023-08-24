@@ -13,6 +13,8 @@ import HomeUnit from "./components/screens/HomeUnit";
 import Scanner from "./components/screens/Scanner";
 import DetailUnit from "./components/screens/DetailUnit";
 
+import './firebaseConfig';
+
 // SplashScreen.preventAutoHideAsync();
 // setTimeout(SplashScreen.hideAsync, 1000);
 
@@ -26,14 +28,14 @@ const App = () => {
           headerShown: false,
         }}
       >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Daftar" component={Daftar} />
         <Stack.Screen name="HomeUnit" component={HomeUnit} />
         <Stack.Screen name="HomeProfile" component={HomeProfile} />
         <Stack.Screen name="DetailUnit" component={DetailUnit} />
         <Stack.Screen name="Scanner" component={Scanner} />
-        <Stack.Screen name="Daftar" component={Daftar} />
         <Stack.Screen name="ChangePassword" component={ChangePassword} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
-        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
       </Stack.Navigator>
     </NavigationContainer>
