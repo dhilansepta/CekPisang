@@ -17,10 +17,12 @@ import { Entypo } from '@expo/vector-icons';
 import RNDateTimePicker from "@react-native-community/datetimepicker";
 import {Picker} from '@react-native-picker/picker';
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 function Daftar({ navigation }) {
   const [nama, setNama] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("testpass");
   const [date, setDate] = useState("");
   const [alamat, setAlamat] = useState("");
   const [nik, setNik] = useState("");
@@ -47,10 +49,29 @@ function Daftar({ navigation }) {
     }
   }
 
-const pickerRef = useRef();
-function open() {
-  pickerRef.current.focus();
-}
+  const pickerRef = useRef();
+  function open() {
+    pickerRef.current.focus();
+  }
+
+  const auth = getAuth();
+  function register() {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(( userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        navigation.navigate("Login");
+        console.log('Register berhasil:\n' + user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        console.log('Register error:\n' + errorMessage);
+      });
+  }
+  
 
     return (
     <View style={styles.background}>
@@ -155,7 +176,7 @@ function open() {
           </View>
         </Pressable>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={ register }>
           <View style={styles.Button} backgroundColor={COLOURS.primary} marginTop={verticalScale(20)}>
             <Text style={styles.text}>Daftar</Text>
           </View>

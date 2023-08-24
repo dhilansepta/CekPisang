@@ -10,9 +10,28 @@ import {
 import { COLOURS } from "../storage/Colour";
 import { horizontalScale, moderateScale, verticalScale } from '../storage/Metrics';
 
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 function Login({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("testpass");
+
+  const auth = getAuth();
+  function login() {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+        console.log('Login berhasil:\n' + user.email);
+        navigation.navigate("HomeUnit");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('Login eror:\n'+errorMessage);
+      });
+    }
 
     return (
     <View style={styles.background}>
@@ -38,7 +57,7 @@ function Login({ navigation }) {
         onChangeText={(text) => setPassword(text)}
         />
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={ login }>
           <View style={styles.Button} backgroundColor={COLOURS.primary} marginTop={verticalScale(20)}>
             <Text style={styles.text}>Masuk</Text>
           </View>
@@ -55,7 +74,7 @@ function Login({ navigation }) {
         </TouchableOpacity>
         
         <TouchableOpacity>
-          <Text style={styles.textButton} marginTop={verticalScale(5)}>Daftar Akun Baru</Text>
+          <Text style={styles.textButton} marginTop={verticalScale(5)} onPress={()=>navigation.navigate('Daftar')}>Daftar Akun Baru</Text>
         </TouchableOpacity>
     </View>
   );
